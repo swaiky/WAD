@@ -1,0 +1,14 @@
+{% extends 'master.html' %}
+
+{% block content %}
+    <a href="/view_all">
+        <button>&leftarrow; All Events</button>
+        <br>
+    </a>
+    <h4>{% block title %} {{ post['title'] }} {% endblock %}</h4>
+    <div class="card">
+        <span class="badge">{{ post['created'] }}</span>
+        <p>{{ post['content'] }}</p>
+    </div>
+
+{% endblock %}

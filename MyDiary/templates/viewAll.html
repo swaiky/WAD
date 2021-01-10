@@ -1,0 +1,17 @@
+{% extends 'master.html' %}
+{% block content %}
+    {% if posts %}
+        List of Special Events
+        {% for post in posts %}
+            <a href="{{ url_for('post', post_id=post['id']) }}">
+                <div class="card">
+                    <h4>{{ post['title'] }}</h4>
+                    <span class="badge badge-primary">{{ post['created'] }}</span>
+                </div>
+            </a>
+            <hr>
+        {% endfor %}
+    {% elif not posts: %}
+        <div class="alert alert-info">No Saved Events</div>
+    {% endif %}
+{% endblock %}
